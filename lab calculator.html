@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AU FM & HM E-Lab</title>
+    <!--Google fonts cdn link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
+    <!--custom css file link-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!--header section starts-->
+    <header>
+        <div id="menu" class="fas fa-bars"></div>
+        <a href="#" class="logo"><i class="fas fa-user-graduate"></i>AU FM & HM E-Lab</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/index.html">Introduction</a></li>
+                <li><a href="/objective.html">Objective</a></li>
+                <li><a href="/list of experiments.html">List of experiments</a></li>
+                <li><a href="/target audience.html">Target audience</a></li>
+                <li><a href="/lab calculator.html">Lab calculator</a></li>
+                <li><a href="/downloads.html">Downloads</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--header section ends-->
+    <!--List of experiments part starts-->
+    <section class="labcalculator" id="labcalculator">
+        <h1> Fluid Mechanics and Hydraulic Machinery Lab calculator</h1>
+        <ul class="tabs">
+            <li class="tab is-active"><a data-switcher data-tab ="1">01. Small orifice - Coefficient of velocity</a></li>
+            <li class="tab"><a data-switcher data-tab ="2">02. Small orifice - Coefficient of discharge (Constant head method)</a></li>
+            <li class="tab"><a data-switcher data-tab ="3">03. Small orifice - Coefficient of discharge (Variable head method)</a></li>
+            <li class="tab"><a data-switcher data-tab ="4">04. Mouthpiece - Constant head method</a></li>
+            <li class="tab"><a data-switcher data-tab ="5">05. Mouthpiece - Variable head method</a></li>
+            <li class="tab"><a data-switcher data-tab ="6">06. Venturi meter</a></li>
+            <li class="tab"><a data-switcher data-tab ="7">07. Orifice meter</a></li>
+            <li class="tab"><a data-switcher data-tab ="8">08. Nozzle meter</a></li>
+            <li class="tab"><a data-switcher data-tab ="9">09. Triangular Notch</a></li>
+            <li class="tab"><a data-switcher data-tab ="10">10. Metacentric Height</a></li>
+            <li class="tab"><a data-switcher data-tab ="11">11. Francis turbine</a></li>
+            <li class="tab"><a data-switcher data-tab ="12">12. Impact of jet - Flat vane</a></li>
+            <li class="tab"><a data-switcher data-tab ="13">13. Impact of jet - Hemispherical vane</a></li>
+            <li class="tab"><a data-switcher data-tab ="14">14. Pipe friction</a></li>
+            <li class="tab"><a data-switcher data-tab ="15">15. Centrifugal pump</a></li>
+            <li class="tab"><a data-switcher data-tab ="16">16. Reciprocating pump</a></li>
+            <li class="tab"><a data-switcher data-tab ="17">17. Rugosity coefficients</a></li>
+            <li class="tab"><a data-switcher data-tab ="18">18. Hydraulic jump</a></li>
+        </ul>
+    </section>
+    <section class="pages">
+        <div class="page is-active" data-page="1">
+            <h1>Small orifice - Coefficient of velocity</h1>
+            <div class="container">
+                <p>Enter the reading on the horizontal scale at the exit of the orifice in cm(x<sub>0</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="sovx0" class="box">
+                <p>Enter the reading on the vertical scale at the exit of the orifice in cm(y<sub>0</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="sovy0" class="box">
+                <p>Enter the reading on the piezometer at the level on center of the orifice in cm(h):</p>
+                <input type="text" placeholder="Enter the value" id="sovh" class="box">
+                <p>Enter the reading on the horizontal scale at a point along the trajectory of jet in cm(x'):</p>
+                <input type="text" placeholder="Enter the value" id="sovx1" class="box">
+                <p>Enter the reading on the vertical scale at a point along the trajectory of jet in cm(y'):</p>
+                <input type="text" placeholder="Enter the value" id="sovy1" class="box">
+                <p>Enter the coefficient of discharge of the small orifice(C<sub>d</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="sovCd" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="smallorificecv()"><br><br>
+                <p>Horizontal distance of fluid particle from the center of orifice in cm(x):</p>
+                <input type="text" placeholder="0" id="sovx" class="box" disabled>
+                <p>Vertical distance of fluid particle from the center of orifice in cm(y):</p>
+                <input type="text" placeholder="0" id="sovy" class="box" disabled>
+                <p>Coefficient of velocity of small orifice(C<sub>v</sub>):</p>
+                <input type="text" placeholder="0" id="sovCv" class="box" disabled>
+                <p>Coefficient of contraction of small orifice(C<sub>c</sub>):</p>
+                <input type="text" placeholder="0" id="sovCc" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="2">
+            <h1>Small orifice - Constant head method</h1>
+            <div class="container">
+                <p>Enter the diameter of the small orifice in cm(d):</p>
+                <input type="text" placeholder="Enter the value" id="sochd" class="box">
+                <p>Enter the cross sectional area of the collecting tank in sq-cm(A):</p>
+                <input type="text" placeholder="Enter the value" id="sochA" class="box">
+                <p>Enter the rise in the level of water in the collecting tank in cm(R):</p>
+                <input type="text" placeholder="Enter the value" id="sochR" class="box">
+                <p>Enter the constant head measured above the center of the small orifice in cm(H):</p>
+                <input type="text" placeholder="Enter the value" id="sochH" class="box">
+                <p>Enter the time taken for R cm rise in the level of water in collecting tank in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="sochT" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="smallorificecdc()"><br><br>
+                <p>Theoritical discharge in cm<sup>3</sup>/sec(Q<sub>th</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="sochQth" class="box">
+                <p>Actual discharge in cm<sup>3</sup>/sec(Q<sub>act</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="sochQact" class="box">
+                <p>Coefficient of discharge of small orifice(C<sub>d</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="sochCd" class="box">
+            </div>
+        </div>
+        <div class="page" data-page="3">
+            <h1>Small orifice - Variable head method</h1>
+            <div class="container">
+                <p>Enter the diameter of the small orifice in cm(d):</p>
+                <input type="text" placeholder="Enter the value" id="socvd" class="box">
+                <p>Enter the cross sectional area of the balancing tank in sq-cm(A):</p>
+                <input type="text" placeholder="Enter the value" id="socvA" class="box">
+                <p>Enter the initial height of the liquid surface above the center of small orifice in cm:(H<sub>1</sub>)</p>
+                <input type="text" placeholder="Enter the value" id="socvH1" class="box">
+                <p>Enter the final height of the liquid surface above the center of small orifice in cm:(H<sub>2</sub>)</p>
+                <input type="text" placeholder="Enter the value" id="socvH2" class="box">
+                <p>Enter the time taken to empty the balancing tank from initial height to final height in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="socvT" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="smallorificecdv()"><br><br>
+                <p>Coefficient of discharge of small orifice(C<sub>d</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="socvCd" class="box">
+            </div>
+        </div>
+        <div class="page" data-page="4">
+            <h1>Mouthpiece - Constant head method</h1>
+            <div class="container">
+                <p>Enter the diameter of the mouth piece in cm(d):</p>
+                <input type="text" placeholder="Enter the value" id="mpd" class="box">
+                <p>Enter the cross sectional area of the collecting tank in sq-cm(A):</p>
+                <input type="text" placeholder="Enter the value" id="mpA" class="box">
+                <p>Enter the rise in the level of water in the collecting tank in cm(R):</p>
+                <input type="text" placeholder="Enter the value" id="mpR" class="box">
+                <p>Enter the constant head measured above the center of the mouthpiece in cm(H):</p>
+                <input type="text" placeholder="Enter the value" id="mpH" class="box">
+                <p>Enter the time taken for R cm rise in the level of water in collecting tank in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="mpT" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="mouthpiecec()"><br><br>
+                <p>Theoritical discharge in cm<sup>3</sup>/sec(Q<sub>th</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="mpQth" class="box">
+                <p>Actual discharge in cm<sup>3</sup>/sec(Q<sub>act</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="mpQact" class="box">
+                <p>Coefficient of discharge of mouthpiece(C<sub>d</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="mpCd" class="box">
+            </div>
+        </div>
+        <div class="page" data-page="5">
+            <h1>Mouthpiece - Variable head method</h1>
+            <div class="container">
+                <p>Enter the diameter of the mouth piece in cm(d):</p>
+                <input type="text" placeholder="Enter the value" id="mpvd" class="box">
+                <p>Enter the cross sectional area of the balancing tank in sq-cm(A):</p>
+                <input type="text" placeholder="Enter the value" id="mpvA" class="box">
+                <p>Enter the initial height of the liquid surface above the center of mouthpiece in cm:(H<sub>1</sub>)</p>
+                <input type="text" placeholder="Enter the value" id="mpvH1" class="box">
+                <p>Enter the final height of the liquid surface above the center of mouthpiece in cm:(H<sub>2</sub>)</p>
+                <input type="text" placeholder="Enter the value" id="mpvH2" class="box">
+                <p>Enter the time taken to empty the balancing tank from initial height to final height in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="mpvT" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="mouthpiecev()"><br><br>
+                <p>Coefficient of discharge of mouthpiece(C<sub>d</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="mpvCd" class="box">
+            </div>
+        </div>
+        <div class="page" data-page="6">
+            <h1>Venturi meter</h1>
+            <div class="container">
+                <p>Enter the cross-sectional area of the collecting tank in sq-cm(A):</p>
+                <input type="text" placeholder="Enter the value" id="venA" class="box">
+                <p>Enter the rise of water level in the collecting tank in cm(R):</p>
+                <input type="text" placeholder="Enter the value" id="venR" class="box">
+                <p>Enter the value of discharge coefficient(k):</p>
+                <input type="text" placeholder="Enter the value" id="venk" class="box">
+                <p>Enter the left limb reading of mercury manometer in cm of Hg(h<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="venh1" class="box">
+                <p>Enter the right limb reading of mercury manometer in cm of Hg(h<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="venh2" class="box">
+                <p>Enter the time taken for R cm rise in level of water in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="venT" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="venturimeter()"><br><br>
+                <p>Difference in manometer readings in cm of mercury(x):</p>
+                <input type="text" placeholder="0" id="venx" class="box" disabled>
+                <p>Venturimeter pressure head in cm of water(h):</p>
+                <input type="text" placeholder="0" id="venh" class="box" disabled>
+                <p>Theoretical discharge in cm<sup>3</sup>/sec(Q<sub>th</sub>):</p>
+                <input type="text" placeholder="0" id="venQth" class="box" disabled>
+                <p>Actual discharge in cm<sup>3</sup>/sec(Q<sub>act</sub>):</p>
+                <input type="text" placeholder="0" id="venQact" class="box" disabled>
+                <p>Coefficient of discharge of venturi meter(C<sub>d</sub>):</p>
+                <input type="text" placeholder="0" id="venCd" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="7">
+            <h1>Orifice meter</h1>
+            <div class="container">
+                <p>Enter the cross-sectional area of the collecting tank in sq-cm(A):</p>
+                <input type="text" placeholder="Enter the value" id="orfA" class="box">
+                <p>Enter the rise of water level in the collecting tank in cm(R):</p>
+                <input type="text" placeholder="Enter the value" id="orfR" class="box">
+                <p>Enter the value of discharge coefficient(k):</p>
+                <input type="text" placeholder="Enter the value" id="orfk" class="box">
+                <p>Enter the left limb reading of mercury manometer in cm of Hg(h<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="orfh1" class="box">
+                <p>Enter the right limb reading of mercury manometer in cm of Hg(h<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="orfh2" class="box">
+                <p>Enter the time taken for R cm rise in level of water in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="orfT" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="orificemeter()"><br><br>
+                <p>Difference in manometer readings in cm of mercury(x):</p>
+                <input type="text" placeholder="0" id="orfx" class="box" disabled>
+                <p>Orificemeter pressure head in cm of water(h):</p>
+                <input type="text" placeholder="0" id="orfh" class="box" disabled>
+                <p>Theoretical discharge in cm<sup>3</sup>/sec(Q<sub>th</sub>):</p>
+                <input type="text" placeholder="0" id="orfQth" class="box" disabled>
+                <p>Actual discharge in cm<sup>3</sup>/sec(Q<sub>act</sub>):</p>
+                <input type="text" placeholder="0" id="orfQact" class="box" disabled>
+                <p>Coefficient of discharge of orifice meter(C<sub>d</sub>):</p>
+                <input type="text" placeholder="0" id="orfCd" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="8">
+            <h1>Nozzle meter</h1>
+            <div class="container">
+                <p>Enter the cross-sectional area of the collecting tank in sq-cm(A):</p>
+                <input type="text" placeholder="Enter the value" id="nozA" class="box">
+                <p>Enter the rise of water level in the collecting tank in cm(R):</p>
+                <input type="text" placeholder="Enter the value" id="nozR" class="box">
+                <p>Enter the value of discharge coefficient(k):</p>
+                <input type="text" placeholder="Enter the value" id="nozk" class="box">
+                <p>Enter the left limb reading of mercury manometer in cm of Hg(h<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="nozh1" class="box">
+                <p>Enter the right limb reading of mercury manometer in cm of Hg(h<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="nozh2" class="box">
+                <p>Enter the time taken for R cm rise in level of water in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="nozT" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="nozzlemeter()"><br><br>
+                <p>Difference in manometer readings in cm of mercury(x):</p>
+                <input type="text" placeholder="0" id="nozx" class="box" disabled>
+                <p>Nozzlemeter pressure head in cm of water(h):</p>
+                <input type="text" placeholder="0" id="nozh" class="box" disabled>
+                <p>Theoretical discharge in cm<sup>3</sup>/sec(Q<sub>th</sub>):</p>
+                <input type="text" placeholder="0" id="nozQth" class="box" disabled>
+                <p>Actual discharge in cm<sup>3</sup>/sec(Q<sub>act</sub>):</p>
+                <input type="text" placeholder="0" id="nozQact" class="box" disabled>
+                <p>Coefficient of discharge of nozzle meter(C<sub>d</sub>):</p>
+                <input type="text" placeholder="0" id="nozCd" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="9">
+            <h1>Triangular Notch</h1>
+            <div class="container">
+                <p>Enter the apex angle of the triangular notch in degrees(&theta;):</p>
+                <input type="text" placeholder="Enter the value" id="tnt" class="box">
+                <p>Enter the cross sectional area of the collecting tank in sq-cm(A):</p>
+                <input type="text" placeholder="Enter the value" id="tnA" class="box">
+                <p>Enter the rise in the level of water in collecting tank in cm(R):</p>
+                <input type="text" placeholder="Enter the value" id="tnR" class="box">
+                <p>Enter the crest level of the v-notch above the channel in cm(H<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="tnH1" class="box">
+                <p>Enter the depth of flow of water in the channel in cm(H<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="tnH2" class="box">
+                <p>Enter the time taken for R cm rise in level of water in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="tnT" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="triangularnotch()"><br><br>
+                <p>Height of water surface above the crest of triangular notch in cm(H):</p>
+                <input type="text" placeholder="Enter the value" id="tnH" class="box" disabled>
+                <p>Theoritical discharge in cm<sup>3</sup>/sec(Q<sub>th</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="tnQth" class="box" disabled>
+                <p>Actual discharge in cm<sup>3</sup>/sec(Q<sub>act</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="tnQact" class="box" disabled>
+                <p>Coefficient of discharge of triangular notch(C<sub>d</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="tnCd" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="10">
+            <h1>Metacentric Height</h1>
+            <div class="container">
+                <p>Enter the cross sectional area of the tank in sq-cm(A):</p>
+                <input type="text" placeholder="Enter the value" id="mhA" class="box">
+                <p>Enter the initial level of water in the tank without pontoon in cm(H<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="mhH1" class="box">
+                <p>Enter the final level of water in the tank with pontoon in cm(H<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="mhH2" class="box">
+                <p>Enter the weight placed on the pontoon in grams(w<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="mhw2" class="box">
+                <p>Enter the distance of unbalanced mass from center of the crossbar in cm(x):</p>
+                <input type="text" placeholder="Enter the value" id="mhx" class="box">
+                <p>Enter the angle through which the pontoon is tilted in degrees(&theta;):</p>
+                <input type="text" placeholder="Enter the value" id="mht" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="metacentricheight()"><br><br>
+                <p>Level of water displaced in tank in cm(H):</p>
+                <input type="text" placeholder="0" id="mhH" class="box" disabled>
+                <p>Weight of the pontoon in gms(w1):</p>
+                <input type="text" placeholder="0" id="mhw1" class="box" disabled>
+                <p>Weight of pontoon along with the placed weight in gms(w):</p>
+                <input type="text" placeholder="0" id="mhw" class="box" disabled>
+                <p>Metacentric height in cm(GM):</p>
+                <input type="text" placeholder="0" id="mhGM" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="11">
+            <h1>Francis Turbine</h1>
+            <div class="container">
+                <p>Enter the diameter of the brakedrum in m(D):</p>
+                <input type="text" placeholder="Enter the value" id="ftD" class="box">
+                <p>Enter the diameter of the pipeline in m(d<sub>0</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="ftd0" class="box">
+                <p>Enter the  throat diameter of the orificemeter in m(d<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="ftd1" class="box">
+                <p>Enter the coefficient of discharge of orificemeter(C<sub>d</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="ftCd" class="box">
+                <p>Enter the weight of the hanger in kg(T<sub>0</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="ftT0" class="box">
+                <p>Enter the delivery pressure gauge reading in kg/cm<sup>2</sup>(P):</p>
+                <input type="text" placeholder="Enter the value" id="ftP" class="box">
+                <p>Enter the pressure gauge reading at the orifice in orificemeter in kg/cm<sup>2</sup>(p<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="ftp1" class="box">
+                <p>Enter the pressure gauge reading at the inlet of orficemeter in kg/cm<sup>2</sup>(p<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="ftp2" class="box">
+                <p>Enter the dead weight placed on the hanger in kg(T<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="ftT1" class="box">
+                <p>Enter the spring balance reading in kg(T<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="ftT2" class="box">
+                <p>Enter the tubine speed in r.p.m(N):</p>
+                <input type="text" placeholder="Enter the value" id="ftN" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="francisturbine()"><br><br>
+                <p>Water supply head in m(H)</p>
+                <input type="text" placeholder="0" id="ftH" class="box" disabled>
+                <p>Orificemeter head in m(h)</p>
+                <input type="text" placeholder="0" id="fth" class="box" disabled>
+                <p>Load on tubine in N(T)</p>
+                <input type="text" placeholder="0" id="ftT" class="box" disabled>
+                <p>Discharge in m<sup>3</sup>/sec(Q):</p>
+                <input type="text" placeholder="0" id="ftQ" class="box" disabled>
+                <p>Input power in kW(P<sub>i</sub>)</p>
+                <input type="text" placeholder="0" id="ftPi" class="box" disabled>
+                <p>Output power in kW(P<sub>o</sub>):</p>
+                <input type="text" placeholder="0" id="ftPo" class="box" disabled>
+                <p>Efficiency in percentage(&eta;):</p>
+                <input type="text" placeholder="0" id="ftn" class="box" disabled>
+                <p> Unit speed(N<sub>u</sub>) </p>
+                <input type="text" placeholder="0" id="ftNu" class="box" disabled>
+                <p>Unit power(P<sub>u</sub>):</p>
+                <input type="text" placeholder="0" id="ftPu" class="box" disabled>
+                <p> Unit discharge(Q<sub>u</sub>):</p>
+                <input type="text" placeholder="0" id="ftQu" class="box" disabled>
+                <p>Specific speed(N<sub>s</sub>):</p>
+                <input type="text" placeholder="0" id="ftNs" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="12">
+            <h1>Impact of jet - Flat vane</h1>
+            <div class="container">
+                <p>Enter the cross-sectional area of the collecting tank in sq-m(A):</p>
+                <input type="text" placeholder="Enter the value" id="ijfA" class="box">
+                <p>Enter the rise of water level in the collecting tank in m(R):</p>
+                <input type="text" placeholder="Enter the value" id="ijfR" class="box">
+                <p>Enter the diameter of the nozzle in m(d):</p>
+                <input type="text" placeholder="Enter the value" id="ijfd" class="box">
+                <p>Enter the cummulative weight placed on the upper disc in kg(w):</p>
+                <input type="text" placeholder="Enter the value" id="ijfw" class="box">
+                <p>Enter the time taken for R m rise in the collecting tank in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="ijfT" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="impactflat()"><br><br>
+                <p>Actual discharge in m<sup>3</sup>/sec(Q<sub>act</sub>):</p>
+                <input type="text" placeholder="0" id="ijfQact" class="box" disabled>
+                <p>Average velocity in m/sec(v):</p>
+                <input type="text" placeholder="0" id="ijfv" class="box" disabled>
+                <p>Theoritical force exerted on the vane in N(F<sub>th</sub>):</p>
+                <input type="text" placeholder="0" id="ijfFth" class="box" disabled>
+                <p>Actual force exerted on the vane in N(F<sub>act</sub>):</p>
+                <input type="text" placeholder="0" id="ijfFact" class="box" disabled>
+                <p>Coefficient of impact(C<sub>i</sub>):</p>
+                <input type="text" placeholder="0" id="ijfCi" class="box" disabled>
+            </div>
+            
+        </div>
+        <div class="page" data-page="13">
+            <h1>Impact of jet - Hemispherical vane</h1>
+            <div class="container">
+                <p>Enter the cross-sectional area of the collecting tank in sq-m(A):</p>
+                <input type="text" placeholder="Enter the value" id="ijhA" class="box">
+                <p>Enter the rise of water level in the collecting tank in m(R):</p>
+                <input type="text" placeholder="Enter the value" id="ijhR" class="box">
+                <p>Enter the diameter of the nozzle in m(d):</p>
+                <input type="text" placeholder="Enter the value" id="ijhd" class="box">
+                <p>Enter the cummulative weight placed on the upper disc in kg(w):</p>
+                <input type="text" placeholder="Enter the value" id="ijhw" class="box">
+                <p>Enter the time taken for R m rise in the collecting tank in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="ijhT" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="impacthemi()"><br><br>
+                <p>Actual discharge in m<sup>3</sup>/sec(Q<sub>act</sub>):</p>
+                <input type="text" placeholder="0" id="ijhQact" class="box" disabled>
+                <p>Average velocity in m/sec(v):</p>
+                <input type="text" placeholder="0" id="ijhv" class="box" disabled>
+                <p>Theoritical force exerted on the vane in N(F<sub>th</sub>):</p>
+                <input type="text" placeholder="0" id="ijhFth" class="box" disabled>
+                <p>Actual force exerted on the vane in N(F<sub>act</sub>):</p>
+                <input type="text" placeholder="0" id="ijhFact" class="box" disabled>
+                <p>Coefficient of impact(C<sub>i</sub>):</p>
+                <input type="text" placeholder="0" id="ijhCi" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="14">
+            <h1>Pipe friction</h1>
+            <div class="container">
+                <p>Enter the length of the pipe in m(l):</p>
+                <input type="text" placeholder="Enter the value" id="pipl" class="box">
+                <p>Enter the cross-sectional area of the collecting tank in sq-m(A):</p>
+                <input type="text" placeholder="Enter the value" id="pipA" class="box">
+                <p>Enter the rise of water level in the collecting tank in m(R):</p>
+                <input type="text" placeholder="Enter the value" id="pipR" class="box">
+                <p>Enter the diameter of the pipe in m(D):</p>
+                <input type="text" placeholder="Enter the value" id="pipD" class="box">
+                <p>Enter the left limb reading of mercury manometer in cm of Hg(L):</p>
+                <input type="text" placeholder="Enter the value" id="pipL" class="box">
+                <p>Enter the right limb reading of mercury manometer in cm of Hg(R):</p>
+                <input type="text" placeholder="Enter the value" id="pipR" class="box">
+                <p>Enter the time taken for R m rise in the collecting tank in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="pipT" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="pipefriction()"><br><br>
+                <p>Difference in manometer readings in m of mercury(x):</p>
+                <input type="text" placeholder="0" id="pipx" class="box" disabled>
+                <p>Head loss due to friction in m of water(h<sub>f</sub>):</p>
+                <input type="text" placeholder="0" id="piphf" class="box" disabled>
+                <p>Actual discharge in m<sup>3</sup>/sec(Q<sub>act</sub>):</p>
+                <input type="text" placeholder="0" id="pipQact" class="box" disabled>
+                <p>Average velocity in m/sec(v):</p>
+                <input type="text" placeholder="0" id="pipv" class="box" disabled>
+                <p>friction factor(f):</p>
+                <input type="text" placeholder="0" id="pipf" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="15">
+            <h1>Centrifugal pump</h1>
+            <div class="container">
+                <p>Enter the Energy meter constant in rev/kW-h(EMC):</p>
+                <input type="text" placeholder="Enter the value" id="cenEMC" class="box">
+                <p>Enter the cross-sectional area of the collecting tank in sq-m(A):</p>
+                <input type="text" placeholder="Enter the value" id="cenA" class="box">
+                <p>Enter the speed of the pump in r.p.m(N):</p>
+                <input type="text" placeholder="Enter the value" id="cenN" class="box">
+                <p>Enter the rise of water level in the collecting tank in m(R):</p>
+                <input type="text" placeholder="Enter the value" id="cenR" class="box">
+                <p>Enter the number of revolutions of enery meter disc counted(n):</p>
+                <input type="text" placeholder="Enter the value" id="cenn" class="box">
+                <p>Enter the delivery pressure in kg/cm<sup>2</sup>(p<sub>d</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="cenpd" class="box">
+                <p>Enter the suction pressure in mm of Hg(p<sub>s</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="cenps" class="box">
+                <p>Enter the time taken for R m rise in the collecting tank in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="cenT" class="box">
+                <p>Enter the time taken for n revolutions of enery meter disc in sec:(t<sub>n</sub>)</p>
+                <input type="text" placeholder="Enter the value" id="centn" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="centrifugalpump()"><br><br>
+                <p>Input power in kW(P<sub>i</sub>)</p>
+                <input type="text" placeholder="0" id="cenPi" class="box" disabled>
+                <p>shaft power in kW(P<sub>s</sub>):</p>
+                <input type="text" placeholder="0" id="cenPs" class="box" disabled>
+                <p> Discharge in m<sup>3</sup>/sec(Q):</p>
+                <input type="text" placeholder="0" id="cenQ" class="box" disabled>
+                <p>Total head in m(H):</p>
+                <input type="text" placeholder="0" id="cenH" class="box" disabled>
+                <p>Pump output in kW(P<sub>o</sub>):</p>
+                <input type="text" placeholder="0" id="cenPo" class="box" disabled>
+                <p>Pump Efficiency in percentage(&eta;<sub>p</sub>):</p>
+                <input type="text" placeholder="0" id="cennp" class="box" disabled>
+                <p>Overall Efficiency in percentage(&eta;<sub>o</sub>):</p>
+                <input type="text" placeholder="0" id="cenno" class="box" disabled>
+                <p>Specific speed of the pump(N<sub>s</sub>):</p>
+                <input type="text" placeholder="0" id="cenNs" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="16">
+            <h1>Reciprocating pump</h1>
+            <div class="container">
+                <p>Enter the Energy meter constant in rev/kW-h(EMC):</p>
+                <input type="text" placeholder="Enter the value" id="recEMC" class="box">
+                <p>Enter the cross-sectional area of the collecting tank in sq-m(A):</p>
+                <input type="text" placeholder="Enter the value" id="recA" class="box">
+                <p>Enter the length of stroke in m(L):</p>
+                <input type="text" placeholder="Enter the value" id="recL" class="box">
+                <p>Enter the diameter of the cylinder in m(D):</p>
+                <input type="text" placeholder="Enter the value" id="recD" class="box">
+                <p>Enter the speed of the pump in r.p.m(N):</p>
+                <input type="text" placeholder="Enter the value" id="recN" class="box">
+                <p>Enter the rise of water level in the collecting tank in m(R):</p>
+                <input type="text" placeholder="Enter the value" id="recR" class="box">
+                <p>Enter the number of revolutions of enery meter disc counted(n):</p>
+                <input type="text" placeholder="Enter the value" id="recn" class="box">
+                <p>Enter the delivery pressure in kg/cm<sup>2</sup>(p<sub>d</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="recpd" class="box">
+                <p>Enter the suction pressure in mm of Hg(p<sub>s</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="recps" class="box">
+                <p>Enter the time taken for R m rise in the collecting tank in sec(T):</p>
+                <input type="text" placeholder="Enter the value" id="recT" class="box">
+                <p>Enter the time taken for n revolutions of enery meter disc in sec:(t<sub>n</sub>)</p>
+                <input type="text" placeholder="Enter the value" id="rectn" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="reciprocatingpump()"><br><br>
+                <p>Input power in kW(P<sub>i</sub>)</p>
+                <input type="text" placeholder="0" id="recPi" class="box" disabled>
+                <p>shaft power in kW(P<sub>s</sub>):</p>
+                <input type="text" placeholder="0" id="recPs" class="box" disabled>
+                <p> Discharge in m<sup>3</sup>/sec(Q):</p>
+                <input type="text" placeholder="0" id="recQ" class="box" disabled>
+                <p>Total head in m(H):</p>
+                <input type="text" placeholder="0" id="recH" class="box" disabled>
+                <p>Pump output in kW(P<sub>o</sub>):</p>
+                <input type="text" placeholder="0" id="recPo" class="box" disabled>
+                <p>Pump Efficiency in percentage(&eta;<sub>p</sub>):</p>
+                <input type="text" placeholder="0" id="recnp" class="box" disabled>
+                <p>Overall Efficiency in percentage(&eta;<sub>o</sub>):</p>
+                <input type="text" placeholder="0" id="recno" class="box" disabled>
+                <p>Slip percentage:</p>
+                <input type="text" placeholder="0" id="recslip" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="17">
+            <h1>Rugosity coefficients</h1>
+            <div class="container">
+                <p>Enter the length of the flume in m(L):</p>
+                <input type="text" placeholder="Enter the value" id="rugL" class="box">
+                <p>Enter the breadth of the flume in m(B):</p>
+                <input type="text" placeholder="Enter the value" id="rugB" class="box">
+                <p>Enter the depth of the flume in m(D):</p>
+                <input type="text" placeholder="Enter the value" id="rugD" class="box">
+                <p>Enter the diameter of the pipeline in m(d<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="rugd1" class="box">
+                <p>Enter the  throat diameter of the orificemeter in m(d<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="rugd2" class="box">
+                <p>Enter the longitudinal bed slope(s):</p>
+                <input type="text" placeholder="Enter the value" id="rugs" class="box">
+                <p>Enter the coefficient of discharge of orficemeter(Cd):</p>
+                <input type="text" placeholder="Enter the value" id="rugCd" class="box">
+                <p>Enter the pressure gauge reading at the inlet of  orficemeter in kg/cm<sup>2</sup>(p<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="rugp1" class="box">
+                <p>Enter the pressure gauge reading at the throat of  orficemeter in kg/cm<sup>2</sup>(p<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="rugp2" class="box">
+                <p>Enter the pointer gauge reading taken at bed level at start point of flume in cm:(B.L.R<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="rugb1" class="box">
+                <p>Enter the pointer gauge reading taken at water level at start point of flume in cm:(W.L.R<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="rugw1" class="box">
+                <p>Enter the pointer gauge reading taken at bed level at mid point of flume in cm:(B.L.R<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="rugb2" class="box">
+                <p>Enter the pointer gauge reading taken at water level at mid point of flume in cm:(W.L.R<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="rugw2" class="box">
+                <p>Enter the pointer gauge reading taken at bed level at end point of flume in cm:(B.L.R<sub>3</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="rugb3" class="box">
+                <p>Enter the pointer gauge reading taken at water level at end point of flume in cm:(W.L.R<sub>3</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="rugw3" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="rugosity()"><br><br>
+                <p>Difference in pressure gauge readings in kg/cm<sup>2</sup>(x):</p>
+                <input type="text" placeholder="0" id="rugx" class="box" disabled>
+                <p>Orficemeter pressure head in m(h):</p>
+                <input type="text" placeholder="0" id="rugh" class="box" disabled>
+                <p>Discharge in m<sup>3</sup>/sec(Q):</p>
+                <input type="text" placeholder="0" id="rugQ" class="box" disabled>
+                <p>Average Depth of flow in flume in m(y):</p>
+                <input type="text" placeholder="0" id="rugy" class="box" disabled>
+                <p>Area of flow in sq-m(A):</p>
+                <input type="text" placeholder="0" id="rugA" class="box" disabled>
+                <p>Wetted perimeter in m(P):</p>
+                <input type="text" placeholder="0" id="rugP" class="box" disabled>
+                <p>Hydraulic mean radius in m(R):</p>
+                <input type="text" placeholder="0" id="rugR" class="box" disabled>
+                <p>Velocity of flow in m/sec(v):</p>
+                <input type="text" placeholder="0" id="rugv" class="box" disabled>
+                <p>Chezy's constant(C):</p>
+                <input type="text" placeholder="0" id="rugC" class="box" disabled>
+                <p>Manning's coefficient(n):</p>
+                <input type="text" placeholder="0" id="rugn" class="box" disabled>
+            </div>
+        </div>
+        <div class="page" data-page="18">
+            <h1>Hydraulic jump</h1>
+            <div class="container">
+                <p>Enter the length of the flume in m(L):</p>
+                <input type="text" placeholder="Enter the value" id="hjL" class="box">
+                <p>Enter the breadth of the flume in m(B):</p>
+                <input type="text" placeholder="Enter the value" id="hjB" class="box">
+                <p>Enter the depth of the flume in m(D):</p>
+                <input type="text" placeholder="Enter the value" id="hjD" class="box">
+                <p>Enter the diameter of the pipeline in m(d<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="hjd1" class="box">
+                <p>Enter the  throat diameter of the orificemeter in m(d<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="hjd2" class="box">
+                <p>Enter the coefficient of discharge of orficemeter(Cd):</p>
+                <input type="text" placeholder="Enter the value" id="hjCd" class="box">
+                <p>Enter the pressure gauge reading at the inlet of  orficemeter in kg/cm<sup>2</sup>(p<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="hjp1" class="box">
+                <p>Enter the pressure gauge reading at the throat of  orficemeter in kg/cm<sup>2</sup>(p<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="hjp2" class="box">
+                <p>Enter the pointer gauge reading taken at bed level before the jump in cm:(B.L.R<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="hjb1" class="box">
+                <p>Enter the pointer gauge reading taken at water level before the jump in cm:(W.L.R<sub>1</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="hjw1" class="box">
+                <p>Enter the pointer gauge reading taken at bed level after the jump in cm:(B.L.R<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="hjb2" class="box">
+                <p>Enter the pointer gauge reading taken at water level after the jump in cm:(W.L.R<sub>2</sub>):</p>
+                <input type="text" placeholder="Enter the value" id="hjw2" class="box">
+                <br><br><input type="submit" class="btn" value="Submit" onclick="hydraulicjump()"><br><br>
+                <p>Difference in pressure gauge readings in kg/cm<sup>2</sup>(x):</p>
+                <input type="text" placeholder="0" id="hjx" class="box" disabled>
+                <p>Orficemeter pressure head in m(h):</p>
+                <input type="text" placeholder="0" id="hjh" class="box" disabled>
+                <p>Discharge in m<sup>3</sup>/sec(Q):</p>
+                <input type="text" placeholder="0" id="hjQ" class="box" disabled>
+                <p>Initial depth in m(y1):</p>
+                <input type="text" placeholder="0" id="hjy1" class="box" disabled>
+                <p>Sequent depth in m(y2):</p>
+                <input type="text" placeholder="0" id="hjy2" class="box" disabled>
+                <p>Velocity of flow before the jump in m/sec(v1):</p>
+                <input type="text" placeholder="0" id="hjv1" class="box" disabled>
+                <p>Velocity of flow after the jump in m/sec(v2):</p>
+                <input type="text" placeholder="0" id="hjv2" class="box" disabled>
+                <p>Specific energy before the jump in m of water(E1):</p>
+                <input type="text" placeholder="0" id="hjE1" class="box" disabled>
+                <p>Specific energy after the jump in m of water(E1):</p>
+                <input type="text" placeholder="0" id="hjE2" class="box" disabled>
+                <p>Loss of specific energy due to jump in m of water(&Delta;E)</p>
+                <input type="text" placeholder="0" id="hjE" class="box" disabled>
+                <p>Length of jump in cm(L<sub>j</sub>):</p>
+                <input type="text" placeholder="0" id="hjLj" class="box" disabled>
+                <p>Height of jump in cm(H<sub>j</sub>):</p>
+                <input type="text" placeholder="0" id="hjHj" class="box" disabled>
+                <p>Froude's number(Fr):</p>
+                <input type="text" placeholder="0" id="hjFr" class="box" disabled>
+            </div>
+        </div>
+    </section>
+    <!--List of experiments part ends-->
+    <!--footer section starts-->
+    <div class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Quick links</h3>
+                <a href="/index.html">Introduction</a>
+                <a href="/objective.html">Objective</a>
+                <a href="/list of experiments.html">List of experiments</a>
+                <a href="/target audience.html">Target audience</a>
+                <a href="/lab calculator.html">Lab calculator</a>
+                <a href="/downloads.html">Downloads</a>
+            </div>
+            <div class="box">
+                <h3>Contact info</h3>
+                <p><a href="https://goo.gl/maps/5aSKjo6tSrmidTm5A" target="_blank"><i class="fas fa-map-marker-alt"></i>Visakhapatnam, India</a></p>
+                <p><a href="mailto:project2023fmlab@gmail.com" target="_blank"><i class="fas fa-envelope"></i>project2023fmlab@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+    <!--footer section ends-->
+    <!--jquery cdn link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!--custom js file link-->
+    <script src="script.js"></script>
+</body>
+</html>

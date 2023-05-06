@@ -1,0 +1,75 @@
+<section class="expt">
+        <div class="expttitle">
+            <h1>Pipe friction</h1>
+        </div>
+        <div class="content">
+            <br><h2 class="headings">Aim:</h2><br>
+
+            <p class="para"></p>
+
+            <br><h2 class="headings">Apparatus:</h2><br>
+
+            <p class="para"></p>
+
+            <br><h2 class="headings">Formulae:</h2><br>
+
+            <p class="para">1.<br><br></p>
+            <p class="para">where,<br></p>
+            
+            <br><h2 class="headings">Theory:</h2><br>
+
+            <p class="para"><br><img class="mainpic" src="/fransetup.jpg" alt="setup"><br>PARA<br><br><img class="mainpic" src="/expfra.jpg" alt="theory"><br><br>PARA</p>
+            
+            <br><h2 class="headings">Procedure:</h2><br>
+
+            <p class="para"></p>
+
+            <br><h2 class="headings">Observations:</h2><br>
+
+            <p class="para"><br><br>Table:<br></p>
+            <table class="table">
+                <thead>
+                    <th>SNo.<br></th>
+                    <th>Percentage of<br>gate opening</th>
+                    <th>P<br>(kg/cm<sup>2</sup>)</th>
+                    <th>H<br>(m)</th>
+                    <th>T<br>(sec)</th>
+                    <th>p<sub>1</sub><br>(kg/cm<sup>2</sup>)</th>
+                    <th>p<sub>2</sub><br>(kg/cm<sup>2</sup>)</th>
+                    <th>h<br>(m)</th>
+                    <th>T<sub>1</sub><br>(kg)</th>
+                    <th>T<sub>2</sub><br>(kg)</th>
+                    <th>N<br>(r.p.m)</th>
+                    <th>Q<br>(m<sup>3</sup>/sec)</th>
+                    <th>P<sub>i</sub><br>(kW)</th>
+                    <th>P<sub>o</sub><br>(kW)</th>
+                    <th>&eta;</th>
+                    <th>N<sub>u</sub></th>
+                    <th>P<sub>u</sub></th>
+                    <th>Q<sub>u</sub></th>
+
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+            </table>
+            
+
+            <br><h2 class="headings">Graphs:</h2><br>
+
+            <p class="para">1. F<sub>act</sub> Vs F<sub>th:</sub><br><img src="/Fa vs Ft.jpeg" alt="Fact Vs Fth"><br>2. F<sub>act</sub> Vs v<sup>2</sup>/2g:<br><img src="/Fa vs v2.jpeg" alt="Fact Vs v2/2g"><br>3. F<sub>act</sub> Vs v:<br><img src="/Fa vs v.jpeg" alt="Fact vs v"></p>
+            <br><h2 class="headings">Precautions:</h2><br>
+
+            <p class="para"></p>
+
+            <br><h2 class="headings">Result:</h2><br>
+
+            <p class="para"></p>
+            
+        </div>
+
+    </section>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AU FM & HM E-Lab</title>
+
+    <!--Google fonts cdn link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
+
+    <!--custom css file link-->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="https://www.hostmath.com/Math/MathJax.js?config=OK"></script>
+
+
+</head>
+<body>
+    <!--header section starts-->
+    <header>
+
+        <div id="menu" class="fas fa-bars"></div>
+
+        <a href="#" class="logo"><i class="fas fa-user-graduate"></i>AU FM & HM E-Lab</a>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="/index.html">Introduction</a></li>
+                <li><a href="/objective.html">Objective</a></li>
+                <li><a href="/list of experiments.html">List of experiments</a></li>
+                <li><a href="/target audience.html">Target audience</a></li>
+                <li><a href="/lab calculator.html">Lab calculator</a></li>
+                <li><a href="/downloads.html">Downloads</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!--header section ends-->
+    
+    <section class="expt">
+        <div class="expttitle">
+            <h1>Pipe friction</h1>
+        </div>
+        <div class="content">
+            <br><h2 class="headings">Aim:</h2><br>
+
+            <p class="para">To determine the Darcy- Weisbach’s friction factor for flow through pipes of different sizes.</p>
+
+            <br><h2 class="headings">Apparatus:</h2><br>
+
+            <p class="para">1. Pipe Friction apparatus<br>2. Stopwatch</p>
+
+            <br><h2 class="headings">Formulae:</h2><br>
+
+            <p class="para">1. Friction factor, `f = \frac{2gDh_{f}}{lv^{2}}`<br><br></p>
+            <p class="para">where,<br>g = Acceleration due to gravity = 9.8 m/sec<sup>2</sup><br>D = Diameter of the pipe in m<br>l = Length of the pipe in m<br> h<sub>f</sub> = Head loss due to friction in m of water =12.6*x<br>
+                x = Difference in the level of mercury in the limbs of a manometer in m of Hg = `\frac{L-R}{100}`<br>L = Left limb reading of manometer in cm of Hg<br>R = Right limb reading of manometer in cm of Hg<br>v= Mean velocity of the flow in pipe in m/sec = `v = \frac{Q_{act}}{a}`<br>a = cross-sectional area of pipe in m<sup>2</sup>` = \frac{\pi D^{2}}{4}`<br>Q<sub>act</sub> = Actual discharge in m<sup>3</sup>/sec ` = \frac{AR}{T}`<br>A = Cross-sectional area of the collecting tank in m<sup>2</sup><br>T = Time taken for R m rise in the tank in sec</p>
+            
+            <br><h2 class="headings">Theory:</h2><br>
+
+            <p class="para">When liquid flows through a pipe under pressure, some head is lost in overcoming the friction between the pipe wall and the flowing fluid. Head loss due to friction is important from an engineering point of view as the design of pipe mains carrying water from any reservoir to a township over a long distance mainly depends upon friction factor. <br><br><img class="mainpic" src="/exppipe.jpg" alt="theory"><br><br>Consider a horizontal pipe of cross-sectional area A carrying a fluid with a mean velocity V. Let 1 and 2 be the two sections of pipe L distance apart, where the intensities of pressure be p<sub>1</sub> and p<sub>2</sub> respectively. By applying Bernoulli’s equation between sections 1 and 2, we obtain<br>`\frac{P_{1}}{\gamma}+\frac{V_{1}^{2}}{2g}+z_{1}=\frac{P_{2}}{\gamma}+\frac{V_{2}^{2}}{2g}+z_{2}+h_{f}`<br>Since, V<sub>1</sub> = V<sub>2</sub> and z<sub>1</sub> = z<sub>2</sub><br>Loss of head, `h_{f}=\frac{p_{1}-p_{2}}{\gamma}`<br>Let f’ be the frictional resistance per unit area at unit velocity, then frictional resistance<br>= f’ * area * V<sup>n</sup><br>= f’ * PL * V<sup>n</sup><br>where,<br>P =  Wetted perimeter of the pipe<br>The pressure forces at the sections 1 and 2 are p<sub>1</sub>A and p<sub>2</sub>A respectively. Thus resolving all the forces horizontally, we have<br>p<sub>1</sub>A = p<sub>2</sub>A + frictional resistance<br>(p<sub>1</sub>-p<sub>2</sub>) A= f’ * PL* V<sup>n</sup><br>(p<sub>1</sub> - p<sub>2</sub>) = f’ * (P/A) * L * V<sup>n</sup><br>But,<br>`h_{f}=\frac{p_{1}-p_{2}}{\gamma}`<br>`h_{f}=\frac{f'}{\gamma}\frac{P}{A}LV^{n}`<br>`h_{f}=\frac{f'}{\gamma}\frac{LV^{n}}{m}`<br>where,<br>m = Hydraulic mean depth = `\frac{A}{P}`<br>For pipes running full,<br>`m = \frac{A}{P} = \frac{\frac{\pi D^{2}}{4}}{\piD}=\frac{D}{4}`<br>Now,<br>`h_{f} = \frac{4f'}{\gamma}\frac{LV^{n}}{D}`<br>Assuming n = 2 and putting ` \frac{4f'}{\gamma}=\frac{f}{2g}`,<br>` h_{f}=\frac{fLV^{2}}{2gD}`</p>
+            
+            <br><h2 class="headings">Procedure:</h2><br>
+
+            <p class="para">1. Note down the diameter of the pipe, length of pipe between pressure tappings and area of the collecting tank.<br>2. Pressure tappings of the pipe being tested are kept open while for the other pipes they are kept closed.<br>3. Open the inlet flow control valve and regulate the valve to allow a steady flow through the pipe.<br>4. The flow rate is initially adjusted to its maximum value by completely opening the flow control valve. Time is allowed to stabilize the levels in manometer tube.<br>5. The discharge flowing through the pipe is measured by recording the time required to collect certain volume of fluid in the collecting tank. Also, record the corresponding mercury manometer readings.<br>6. The flow rate is reduced in stages by means of flow control valve and the corresponding discharge & manometer readings are noted.<br>7. Repeat the procedure for different sets of pipes available in the pipe friction apparatus.</p>
+
+            <br><h2 class="headings">Observations:</h2><br>
+
+            <p class="para">Length of the pipe, L = .......... m<br>Cross - sectional area of the collecting tank, A = .......... m<sup>2</sup><br>Diameter of the pipe, D = .......... m<br><br>Table:<br></p>
+            <table class="table">
+                <thead>
+                    <th>SNo.<br></th>
+                    <th>L<br>(cm of Hg)</th>
+                    <th>R<br>(cm of Hg)</th>
+                    <th>x<br>(m of Hg)</th>
+                    <th>h<sub>f</sub><br>(m of water)</th>
+                    <th>R<br>(m)</th>
+                    <th>T<br>(sec)</th>
+                    <th>Q<sub>act</sub><br>(m<sup>3</sup>/sec)</th>
+                    <th>v<br>(m/sec)</th>
+                    <th>f</th>
+                    <th>v<sup>2</sup>/2g</th>
+                    <th>log h<sub>f</sub></th>
+                    <th>log v</th>
+
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+            </table>
+            
+
+            <br><h2 class="headings">Graphs:</h2><br>
+
+            <p class="para">1. h<sub>f</sub> Vs v:</sub><br><img src="/hf vs v.jpg" alt="hf vs v"><br>2. h<sub>f</sub> Vs `\frac{v^{2}}{2g}`:<br><img src="/hf vs v2.jpg" alt="hf Vs v2/2g"><br>3. log h<sub>f</sub> Vs log v:<br><img src="loghf vs lov.jpg" alt="loghf vs logv"></p>
+            <br><h2 class="headings">Precautions:</h2><br>
+
+            <p class="para">1. Sufficient time should be given for the flow to become steady-uniform.<br>2. Remove the entrapped air in manometer tubes. This can be achieved by opening the valves provided at the top of the manometer simultaneously. If they are opened out separately, the manometric fluid will spill out.<br>3. Apparatus should be in levelled condition.</p>
+
+            <br><h2 class="headings">Result:</h2><br>
+
+            <p class="para">1. Friction factor of the half-inch pipe,<br> &nbsp&nbsp&nbsp&nbspa) Average of tabulated values = ..........<br>&nbsp&nbsp&nbsp&nbspb) From h<sub>f</sub> Vs `\frac{v^{2}}{2g}` graph = ..........<br>&nbsp&nbsp&nbsp&nbspc) From h<sub>f</sub> Vs v graph = ..........<br>&nbsp&nbsp&nbsp&nbspd) From log h<sub>f</sub> Vs log V graph	= ..........<br>2. Friction factor of the three fourth-inch pipe,<br> &nbsp&nbsp&nbsp&nbspa) Average of tabulated values = ..........<br>&nbsp&nbsp&nbsp&nbspb) From h<sub>f</sub> Vs `\frac{v^{2}}{2g}` graph = ..........<br>&nbsp&nbsp&nbsp&nbspc) From h<sub>f</sub> Vs v graph = ..........<br>&nbsp&nbsp&nbsp&nbspd) From log h<sub>f</sub> Vs log V graph	= ..........<br></p>
+        </div>
+    </section>
+
+    <!--footer section starts-->
+
+    <div class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Quick links</h3>
+                <a href="/index.html">Introduction</a>
+                <a href="/objective.html">Objective</a>
+                <a href="/list of experiments.html">List of experiments</a>
+                <a href="/target audience.html">Target audience</a>
+                <a href="/lab calculator.html">Lab calculator</a>
+                <a href="/downloads.html">Downloads</a>
+            </div>
+
+            <div class="box">
+                <h3>Contact info</h3>
+                <p><a href="https://goo.gl/maps/5aSKjo6tSrmidTm5A" target="_blank"><i class="fas fa-map-marker-alt"></i>Visakhapatnam, India</a></p>
+                <p><a href="mailto:project2023fmlab@gmail.com" target="_blank"><i class="fas fa-envelope"></i>project2023fmlab@gmail.com</a></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--footer section ends-->
+
+    <!--jquery cdn link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+    <!--custom js file link-->
+    <script src="script.js"></script>
+</body>
+</html>

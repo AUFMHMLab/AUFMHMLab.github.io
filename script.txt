@@ -1,0 +1,161 @@
+$(document).ready(function(){
+
+    $('#menu').click(function(){
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('nav-toggle');
+    });
+
+    $(window).on('load scroll',function(){
+
+        $('#menu').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
+    });
+});
+
+window.onload = () => {
+    const tab_switchers = document.querySelectorAll('[data-switcher]');
+
+    for (let i = 0; i < tab_switchers.length; i++) {
+        const tab_switcher = tab_switchers[i];
+        const page_id = tab_switcher.dataset.tab;
+
+        tab_switcher.addEventListener('click', () => {
+            document.querySelector('.tabs .tab.is-active').classList.remove('is-active');
+            tab_switcher.parentNode.classList.add('is-active');
+
+            SwitchPage(page_id);
+        });
+    }
+}
+
+function SwitchPage (page_id) {
+    console.log(page_id);
+    
+    const current_page = document.querySelector('.pages .page.is-active');
+    current_page.classList.remove('is-active');
+
+    const next_page = document.querySelector(`.pages .page[data-page="${page_id}"]`)
+    next_page.classList.add('is-active');
+}
+
+function nozzlemeter(){
+
+    var A = Number(document.getElementById("nozA").value);
+    var R = Number(document.getElementById("nozR").value);
+    var k = Number(document.getElementById("nozk").value);
+    var h1 = Number(document.getElementById("nozh1").value);
+    var h2 = Number(document.getElementById("nozh2").value);
+    var T = Number(document.getElementById("nozT").value);
+    var x = h1 - h2;
+    var h = 12.6*x;
+    var Qth = (k*Math.sqrt(h));
+    var Qact = (A*R)/T;
+    var Cd = Qact/Qth;
+    document.getElementById("nozx").value = String(x.toFixed(3));
+    document.getElementById("nozh").value = String(h.toFixed(3));
+    document.getElementById("nozQth").value = String(Qth.toFixed(3));
+    document.getElementById("nozQact").value = String(Qact.toFixed(3));
+    document.getElementById("nozCd").value = String(Cd.toFixed(3));
+
+}
+
+function smallorficecv(){
+
+    var x0 = Number(document.getElementById("sovx0").value);
+    var y0 = Number(document.getElementById("sovy0").value);
+    var h = Number(document.getElementById("sovh").value);
+    var x1 = Number(document.getElementById("sovx1").value);
+    var y1 = Number(document.getElementById("sovy1").value);
+    var Cd = Number(document.getElementById("sovCd").value);
+    var x = x1 - x0;
+    var y = y0 - y1;
+    var Cv = x/(2*Math.sqrt(y*h));
+    var Cc = Cd/Cv;
+    document.getElementById("sovx").value = String(x.toFixed(3));
+    document.getElementById("sovy").value = String(y.toFixed(3));
+    document.getElementById("sovCv").value = String(Cv.toFixed(3));
+    document.getElementById("sovCc").value = String(Cc.toFixed(3));
+
+}
+
+function francisturbine(){
+
+    var D = Number(document.getElementById("ftD").value);
+    var d0 = Number(document.getElementById("ftd0").value);
+    var d1 = Number(document.getElementById("ftd1").value);
+    var Cd = Number(document.getElementById("ftCd").value);
+    var T0 = Number(document.getElementById("ftT0").value);
+    var P = Number(document.getElementById("ftP").value);
+    var p1 = Number(document.getElementById("ftp1").value);
+    var p2 = Number(document.getElementById("ftp2").value);
+    var T1 = Number(document.getElementById("ftT1").value);
+    var T2 = Number(document.getElementById("ftT2").value);
+    var N = Number(document.getElementById("ftN").value);
+    var H = 10*P;
+    var h = 10*(p2-p1);
+    var T = 9.81*(T1 - T2 + T0);
+    var a0 = (Math.PI*Math.pow(d0,2))/4;
+    var a1 = (Math.PI*Math.pow(d1,2))/4;
+    var Q = (Cd*a0*a1*Math.sqrt(2*9.81*h))/(Math.sqrt(Math.pow(a0,2) - Math.pow(a1,2)));
+    var Pi = 9.81*Q*H;
+    var Po = (Math.PI*D*N*T)/60000;
+    var n = (Po*100)/Pi;
+    var Nu = N/Math.sqrt(H);
+    var Pu = Po/Math.pow(H,3/2);
+    var Qu = Q/Math.sqrt(H);
+    var Ns = Nu*Math.sqrt(Pu);
+    document.getElementById("ftH").value = String(H.toFixed(0));
+    document.getElementById("fth").value = String(h.toFixed(0));
+    document.getElementById("ftT").value = String(T.toFixed(2));
+    document.getElementById("ftQ").value = String(Q.toFixed(7));
+    document.getElementById("ftPi").value = String(Pi.toFixed(3));
+    document.getElementById("ftPo").value = String(Po.toFixed(3));
+    document.getElementById("ftn").value = String(n.toFixed(2));
+    document.getElementById("ftNu").value = String(Nu.toFixed(2));
+    document.getElementById("ftPu").value = String(Pu.toFixed(4));
+    document.getElementById("ftQu").value = String(Qu.toFixed(6));
+    document.getElementById("ftNs").value = String(Ns.toFixed(2));
+
+}
+
+function impactflat(){
+
+    var A = Number(document.getElementById("ijfA").value);
+    var R = Number(document.getElementById("ijfR").value);
+    var d = Number(document.getElementById("ijfd").value);
+    var w = Number(document.getElementById("ijfw").value);
+    var T = Number(document.getElementById("ijfT").value);
+    var a = (Math.PI*Math.pow(d,2))/4;
+    var Qact = (A*R)/T;
+    var v = Qact/a;
+    var Fth = 1000*a*Math.pow(v,2);
+    var Fact = 9.81*w;
+    var Ci = Fact/Fth;
+    document.getElementById("ijfQact").value = String(Qact.toFixed(6));
+    document.getElementById("ijfv").value = String(v.toFixed(2));
+    document.getElementById("ijfFth").value = String(Fth.toFixed(2));
+    document.getElementById("ijfFact").value = String(Fact.toFixed(2));
+    document.getElementById("ijfCi").value = String(Ci.toFixed(2));
+
+}
+
+function impacthemi(){
+
+    var A = Number(document.getElementById("ijhA").value);
+    var R = Number(document.getElementById("ijhR").value);
+    var d = Number(document.getElementById("ijhd").value);
+    var w = Number(document.getElementById("ijhw").value);
+    var T = Number(document.getElementById("ijhT").value);
+    var a = (Math.PI*Math.pow(d,2))/4;
+    var Qact = (A*R)/T;
+    var v = Qact/a;
+    var Fth = 2*1000*a*Math.pow(v,2);
+    var Fact = 9.81*w;
+    var Ci = Fact/Fth;
+    document.getElementById("ijhQact").value = String(Qact.toFixed(6));
+    document.getElementById("ijhv").value = String(v.toFixed(2));
+    document.getElementById("ijhFth").value = String(Fth.toFixed(2));
+    document.getElementById("ijhFact").value = String(Fact.toFixed(2));
+    document.getElementById("ijhCi").value = String(Ci.toFixed(2));
+
+}
